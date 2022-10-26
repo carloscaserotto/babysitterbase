@@ -1,0 +1,19 @@
+<div class="container" id="home-container">
+<div class="jumbotron text-center text-white">
+  <h1 class="display-4">Marino Babysitting Web Page</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <% if !logged_in? %>
+    <%= link_to 'Sign up as a User', sign_up_path, class:"btn btn-outline-success" %>
+    <%= link_to 'Sign up as a Babysitter',  new_employee_path, class:"btn btn-outline-success" %>
+    <%= link_to 'Login', login_path, class:"btn btn-outline-success" %>
+  <% end %>
+  <%= link_to 'View Users', users_path, class:"btn btn-outline-success" %>
+  <%= link_to 'View Babysitters', employees_path, class:"btn btn-outline-success" %>  
+  
+</div>
+</div>
+
+
+

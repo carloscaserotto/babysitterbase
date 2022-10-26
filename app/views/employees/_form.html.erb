@@ -1,0 +1,36 @@
+<div class= "container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+        <%= render 'shared/errors', obj: @employee %>
+            <%= form_with(model: @employee, class: "shadow p-3 mb-3 bg-info rounded", local: true)  do |f| %>
+                <div class="form-group row">
+                    <%= f.label :email, class: "col-2 col-form-label text-light" %>
+                    <div class="col-10">
+                        <%= current_user.username %>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <%= f.label :email, class: "col-2 col-form-label text-light" %>
+                    <div class="col-10">
+                        <%= current_user.email %>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <%= f.label :description, class: "col-2 col-form-label text-light" %>
+                    <div class="col-10">
+                        <%= f.text_area :description, class: "form-control shadow rounded", placeholder:"Enter your email address" %>
+                    </div>
+                </div>
+                
+
+                <div class="form-group row justify-content-center">
+                    <%= f.submit(@employee.new_record? ? "Sign up" : "Update account", class: "btn btn-outline-light btn-lg") %>
+                </div>
+            <% end %>
+            <div class="form-group row justify-content-center">
+            <%= link_to '[Cancel and return]', employees_path, class: "text-info" %>
+            </div>
+            </div>
+        </div>
+</div>
